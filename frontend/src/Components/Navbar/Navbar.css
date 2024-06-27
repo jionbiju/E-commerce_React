@@ -17,15 +17,16 @@
 }
 .nav-menu{
     align-items: center;
-    color: #626262;
+    color: #797878;
     font-size: 20px;
     gap:55px;
     display: flex;
     list-style: none;
+
 }
 .nav-menu hr{
     border:none;
-    background:#ff4141;
+    background:#f10808;
     width: 85%;
     height: 3px;
     border-radius: 10px;
