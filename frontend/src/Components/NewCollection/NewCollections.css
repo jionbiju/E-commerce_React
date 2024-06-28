@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 90vh;
+    margin-bottom: 50px;
     gap: 10px;
 }
 .new-collections h1{
