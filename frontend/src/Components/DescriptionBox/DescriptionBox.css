@@ -19,10 +19,9 @@
     color: #555;
 }
 .descriptionbox-description{
-    margin-top: 20px;
     display: flex;
+    gap: 20px;
     padding: 40px;
-    gap: 25px;
     flex-direction: column;
     border: 1px solid #D0D0D0;
     padding-bottom: 70px;
