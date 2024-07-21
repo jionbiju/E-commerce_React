@@ -7,12 +7,13 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 const { error } = require("console");
+require('dotenv').config();
 
 app.use(express.json());
 app.use(cors());
 
 //Database Connection With MongoDB
-mongoose.connect("mongodb+srv://jionbiju:670633@cluster0.wzgnukr.mongodb.net/e-commerce");
+mongoose.connect(process.env.MONGO_DB);
 
 //API Creation
 app.get("/",(req,res)=>{
@@ -31,6 +32,7 @@ const upload = multer({storage:storage})
 
 //Creating Upload Endpoint for images
 app.use('/images',express.static('upload/images'))
+
 
 app.post("/upload",upload.single('product'),(req,res)=>{
     res.json({
