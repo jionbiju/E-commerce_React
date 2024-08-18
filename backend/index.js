@@ -10,7 +10,12 @@ const { error } = require("console");
 require('dotenv').config();
 
 app.use(express.json());
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+    origin: 'http://127.0.0.1:5173', // Replace this with your frontend origin
+    methods: ['GET', 'POST'],
+  }));
+  
 
 //Database Connection With MongoDB
 mongoose.connect(process.env.MONGO_DB);

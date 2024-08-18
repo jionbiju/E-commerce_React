@@ -27,7 +27,8 @@
         width: 100%;
         height: auto;
         justify-content: center;
-
-
+    }
+    .sidebar-item{
+        margin: 0;
     }
 }
