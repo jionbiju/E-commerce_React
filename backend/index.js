@@ -9,12 +9,17 @@ const cors = require("cors");
 const { error } = require("console");
 require('dotenv').config();
 
-app.use(express.json());
+// app.use(express.json());
+// Init Middleware
+app.use(express.json({ extended: false }));
+
+// cors
+app.use(cors({ origin: true, credentials: true }));
 //app.use(cors());
-app.use(cors({
-    origin: 'http://127.0.0.1:5173', // Replace this with your frontend origin
-    methods: ['GET', 'POST'],
-  }));
+// app.use(cors({
+//     origin: 'http://127.0.0.1:5173', // Replace this with your frontend origin
+//      methods: ['GET', 'POST'],
+//   }));
   
 
 //Database Connection With MongoDB
@@ -154,6 +159,7 @@ const Users = mongoose.model('Users',{
 //Creating Endpoint for registering user
 
 app.post('/signup', async(req,res)=>{
+  
     let check =await Users.findOne({email:req.body.email});   
     if(check){
         return res.status(400).json({success:false,errors:"existing user found with same email address"})
@@ -195,7 +201,7 @@ app.post('/login', async(req,res)=>{
             res.json({success:true,token})
         }
         else{
-            res.jsom({success:false,error:"Wrong Password"})
+            res.json({success:false,error:"Wrong Password"})
         }
     }
     else{
