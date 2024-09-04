@@ -71,7 +71,7 @@ const Add_Product = async () =>{
         <select value={productDetails.category} onChange={changeHandler} name='category' className='add-product-selector'>
         <option value="woemne">Women</option>
         <option value="men">Men</option>
-        <option value="kdi">Kid</option>
+        <option value="kid">Kid</option>
         </select>
       </div>
       <div className="addproduct-itemfield">
